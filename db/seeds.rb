@@ -13,3 +13,5 @@ User.destroy_all
 5.times do
     User.create(username:Faker::Name.unique.name, email:Faker::Internet.unique.email, password: 'noneed')
 end
+
+demo = User.create(username: 'demouser', email: "demouser@gmail.com", password: "noneed")
