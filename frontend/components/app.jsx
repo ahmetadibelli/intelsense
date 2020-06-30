@@ -12,19 +12,25 @@ import GreetingContainer from './greeting/greeting_container';
 import SignUpFormContainer from './session_form/signup_form_container';
 import LogInFormContainer from './session_form/login_form_container';
 import { AuthRoute} from '../util/route_util';
+import Modal from '../components/modal/modal' 
 
 const App = () => (
     <div>
         <header>
-            <Link to="/" className="header-link">
-                <h1>Intelsense</h1>
-            </Link>
-            <GreetingContainer />
+            <div className="nav-container">
+                <nav className="nav-bar">
+                    <Link to="/" className="header-link">
+                        <h1>IntelSense</h1>
+                    </Link>
+                    <GreetingContainer />
+                    <Modal />
+                </nav>
+            </div>
         </header>
-        <Switch>
+        {/* <Switch>
             <AuthRoute exact path="/login" component={LogInFormContainer} />
             <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-        </Switch>
+        </Switch> */}
     </div>
 );
 

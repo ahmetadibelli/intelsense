@@ -11,6 +11,7 @@ function Modal({ modal, closeModal }) {
     let component;
     switch (modal) {
         case 'Log In':
+            // debugger
             component = <LoginFormContainer />;
             break;
         case 'Sign Up':

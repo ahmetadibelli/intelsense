@@ -14,4 +14,4 @@ User.destroy_all
     User.create(username:Faker::Name.unique.name, email:Faker::Internet.unique.email, password: 'noneed')
 end
 
-User.create(username: 'Demo User', email: "demouser@gmail.com", password: "noneed")
+User.create(username: 'demouser', email: "demouser@gmail.com", password: "noneed")

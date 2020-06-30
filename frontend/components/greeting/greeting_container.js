@@ -12,7 +12,7 @@ const mapStateToProps = ({ session, entities: { users } }) => {
 const mapDispatchToProps = dispatch => ({
     logout: () => dispatch(logout()),
     openModal: modal => dispatch(openModal(modal)),
-    demoLogin: () => dispatch(login({email: "demouser@gmail.com", password: "noneed"}))
+    demoLogin: () => dispatch(login({username: 'demouser', email: "demouser@gmail.com", password: "noneed"}))
 });
 
 export default connect(
