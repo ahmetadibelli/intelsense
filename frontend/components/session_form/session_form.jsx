@@ -74,10 +74,10 @@ class SessionForm extends React.Component {
         //  debugger
         return (
             <div className="session-form-container">
-                <button className="session-close" onClick={this.props.closeModal}>X</button>   
+                <button className="session-close" onClick={this.props.closeModal}>x</button>   
                     {this.props.header}
                     {this.renderErrors()}
-                    {/* {this.props.description} */}
+                    {this.props.description}
                     <form className="session-form" onSubmit={this.handleSubmit}>
                         {
                             this.props.formType === 'Sign Up' && 

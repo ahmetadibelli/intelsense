@@ -24,21 +24,21 @@
     font-size: 30px;
 }
 
-// .header-description {
-//     font-family: Poppins-Regular;
-// 	font-size: 14px;
-//     line-height: 1.7;
-//     text-align: center;
-//     width: 360px;
-//     height: 90px;
-//     font-weight: 400;
-//     // width: calc(100% + 2px);
-//     // height: calc(100% + 2px);
-//     margin: 0 220px 20px 220px;
-//     color: black;
-//     overflow: auto;
-//     pointer-events: none;
-// }
+.header-description {
+    font-family: Poppins-Regular;
+	font-size: 14px;
+    line-height: 1.7;
+    text-align: center;
+    width: 360px;
+    height: 90px;
+    font-weight: 400;
+    // width: calc(100% + 2px);
+    // height: calc(100% + 2px);
+    margin: 0 220px 20px 220px;
+    color: black;
+    overflow: auto;
+    pointer-events: none;
+}
 
 .session-form {
     margin-top: 20px;
@@ -97,6 +97,7 @@
   transition: all 0.4s;
   position: relative;
   z-index: 1;
+  cursor: pointer;
 }
 
 .session-submit:hover:before {
