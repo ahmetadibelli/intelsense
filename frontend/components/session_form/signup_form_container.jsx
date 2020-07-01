@@ -10,6 +10,7 @@ const mapStateToProps = ({ errors }) => {
         errors: errors.session,
         formType: 'Sign Up',
         header: <h2 className="header-session">Join Intelsense</h2>,
+        // description: <p className="header-description">Create an account to receive great stories in your inbox, personalize your homepage, and follow authors and topics that you love.</p>,
         footer: <p>Already have an account?</p>,
     };
 };

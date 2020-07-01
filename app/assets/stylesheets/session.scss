@@ -19,9 +19,25 @@
     padding: 0px 10px;
 }
 
-// .header-session {
-//     font-family: SourceSansPro-Bold;
-//     font-size: 30px;
+.header-session {
+    font-family: SourceSansPro-Bold;
+    font-size: 30px;
+}
+
+// .header-description {
+//     font-family: Poppins-Regular;
+// 	font-size: 14px;
+//     line-height: 1.7;
+//     text-align: center;
+//     width: 360px;
+//     height: 90px;
+//     font-weight: 400;
+//     // width: calc(100% + 2px);
+//     // height: calc(100% + 2px);
+//     margin: 0 220px 20px 220px;
+//     color: black;
+//     overflow: auto;
+//     pointer-events: none;
 // }
 
 .session-form {
@@ -45,8 +61,15 @@
 }
 
 .session-errors {
-    margin: 8px;
-    color: black solid;
+    // display: block;
+    text-align: center;
+    align-self: center;
+    justify-content: center;
+    margin: 10px;
+    font-family: SourceSansPro-Bold;
+    color: #b22222;
+    // -webkit-animation: error_shake 0.4s 1 linear;
+    // -moz-animation: error_shake 0.4s 1 linear;
 }
 
 .session-submit {

@@ -11,6 +11,7 @@ const mapStateToProps = ({ errors }) => {
         errors: errors.session,
         formType: 'Log In',
         header: <h2 className="header-session">Welcome Back</h2>,
+        // description: <p className="header-description">Sign in to get personalized story recommendations, follow authors and topics you love, and interact with stories.</p>,
         footer: <p>No Account?</p>,
     };
 };
