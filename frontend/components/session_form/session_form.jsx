@@ -60,7 +60,7 @@ class SessionForm extends React.Component {
         if (this.props.formType === 'Sign Up') {
             usernameField = (
                 <div>
-                    <label className="session-form-label">Username
+                    <label className="session-form-lbl">Username
                         <input type="text"
                                 value={this.state.username}
                                 onChange={this.update('username')}
@@ -79,7 +79,7 @@ class SessionForm extends React.Component {
                     <form className="session-form" onSubmit={this.handleSubmit}>
                         {
                             this.props.formType === 'Sign Up' && 
-                                    <label className="session-form-lbl">Email:
+                                    <label className="session-form-lbl">Email
                                             <input type="text"
                                                     value={this.state.email}
                                                     onChange={this.update('email')}
@@ -88,7 +88,7 @@ class SessionForm extends React.Component {
                                     </label>
                         }
 
-                                    <label className="session-form-lbl">UserName:
+                                    <label className="session-form-lbl">Username
                                                             <input type="text"
                                             value={this.state.username}
                                             onChange={this.update('username')}
@@ -96,7 +96,7 @@ class SessionForm extends React.Component {
                                         />
                                     </label>
 
-                                    <label className="session-form-lbl">Password:
+                                    <label className="session-form-lbl">Password
                                         <input type="password"
                                                 value={this.state.password}
                                                 onChange={this.update('password')}
