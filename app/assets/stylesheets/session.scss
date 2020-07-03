@@ -6,7 +6,8 @@
 }
 
 .session-form-container {
-  font-family: 'Playfair Display', serif;
+    font-family: medium-content-sans-serif-font, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+//   font-family: 'Playfair Display', serif;
   font-size: 12px;
 }
 
@@ -25,14 +26,15 @@
 }
 
 .header-session {
-    font-family: 'Playfair Display', serif;
+    font-family: medium-content-sans-serif-font, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+    // font-family: 'Playfair Display', serif;
     margin-top: 2px;;
     font-size: 30px;
 }
 .header-description {
     display: flex;
 
-    font-family: -webkit-bodysans-serif;
+    font-family: medium-content-sans-serif-font, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
 	font-size: 14px;
     line-height: 1.7;
     text-align: center;
@@ -57,7 +59,8 @@
 }
 
 .session-form-lbl > input {
-    font-family: SourceSansPro-Bold;
+    font-family: medium-content-sans-serif-font, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+    // font-family: SourceSansPro-Bold;
     padding: 5px;
     font-size: 16px;
     background: transparent;
@@ -73,7 +76,8 @@
     align-self: center;
     justify-content: center;
     margin: 10px;
-    font-family: SourceSansPro-Bold;
+    font-family: medium-content-sans-serif-font, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+    // font-family: SourceSansPro-Bold;
     color: #b22222;
     // -webkit-animation: error_shake 0.4s 1 linear;
     // -moz-animation: error_shake 0.4s 1 linear;
@@ -132,7 +136,8 @@
 //   border-radius: 10px;
     border: none;
 
-    font-family: Poppins-Medium;
+    font-family: medium-content-sans-serif-font, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+    // font-family: Poppins-Medium;
   font-size: 16px;
   color: green;
   line-height: 1.2;
