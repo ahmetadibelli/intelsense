@@ -26,7 +26,7 @@ const Greeting = ({ currentUser, logout, openModal, demoLogin }) => {
     const loggedOut = () => (
         <div className="nav-bar-2">
             <button className="nav-signin-btn" onClick={() => openModal("Log In")}>Log In</button>
-            <button className="nav-signup-btn" onClick={() => openModal("Sign Up")}>Sign Up</button>
+            <button className="nav-signup-btn" onClick={() => openModal("Sign Up")}>Get started</button>
             <button className="nav-demo-btn" onClick={ demoLogin }>Demo</button>
         </div>
     );
