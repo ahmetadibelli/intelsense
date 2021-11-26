@@ -15,7 +15,7 @@ class CommentsController < ApplicationController
   end
 
   def update
-    if @article.update!(params[:comment])
+    if @comment.update!(params[:comment])
       { success: true, message: 'Comment Updated Successfully' }
     else
       { success: false, message: 'Action Failed' }
@@ -23,7 +23,7 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    if @article.destroy
+    if @comment.destroy
       { success: true, message: 'Comment Destroyed Successfully' }
     else
       { success: false, message: 'Action Failed' }
