@@ -5,6 +5,10 @@ class CommentsController < ApplicationController
     @comments = @article.comments
   end
 
+  def create
+    @comment = @article.comments.create!(params[:comment].merge(user_id: params[:user_id]))
+  end
+
   private
 
   def set_article
