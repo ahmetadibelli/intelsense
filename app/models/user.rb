@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :articles
+  has_many :comments
 
   validates :username, :email, :password_digest, :session_token, presence: true
   validates :username, :email, :session_token, uniqueness: true
