@@ -1,5 +1,10 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: %i[update destroy]
+
+  def index
+    @articles = Article.all
+  end
+
   def create
     @article = Article.new(params[:article])
     if @article.save!
