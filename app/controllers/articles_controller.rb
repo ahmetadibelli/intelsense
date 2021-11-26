@@ -11,25 +11,25 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(params[:article])
     if @article.save!
-      flash[:success] = 'Article Created Successfuly'
+      { success: true, message: 'Article Added Successfully' }
     else
-      flash[:error] = 'Article Creation Failed'
+      { success: false, message: 'Action Failed' }
     end
   end
 
   def update
     if @article.update!(params[:article])
-      flash[:success] = 'Article Updated Successfuly'
+      { success: true, message: 'Article Updated Successfully' }
     else
-      flash[:error] = 'Article Updation Failed'
+      { success: false, message: 'Action Failed' }
     end
   end
 
   def destroy
     if @article.destroy!
-      flash[:success] = 'Article Removed Successfuly'
+      { success: true, message: 'Article Destroyed Successfully' }
     else
-      flash[:error] = 'Article Removal Failed'
+      { success: false, message: 'Action Failed' }
     end
   end
 
