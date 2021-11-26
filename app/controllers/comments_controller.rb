@@ -22,6 +22,14 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    if @article.destroy
+      { success: true, message: 'Comment Destroyed Successfully' }
+    else
+      { success: false, message: 'Action Failed' }
+    end
+  end
+
   private
 
   def set_article
