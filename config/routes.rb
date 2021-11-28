@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy, :show]
     resources :articles, shallow: true do
       resources :comments, except: %i[new edit show]
+      resources :likes, except: %i[new edit show]
     end
   end
 
