@@ -3,6 +3,12 @@ class User < ApplicationRecord
   has_many :comments
   has_many :likes
 
+  has_many :follower_followings, foreign_key: :followed_id, class_name: 'Following'
+  has_many :followers, through: :follower_followings
+
+  has_many :followed_followings, foreign_key: :follower_id, class_name: 'Following'
+  has_many :followeds, through: :followed_followings
+
   validates :username, :email, :password_digest, :session_token, presence: true
   validates :username, :email, :session_token, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
