@@ -7,6 +7,8 @@ Rails.application.routes.draw do
       resources :comments, except: %i[new edit show]
       resources :likes, except: %i[new edit show]
     end
+    get '/:user_id/followers', to: 'followings_controller#followers'
+    get '/:user_id/followeds', to: 'followings_controller#followeds'
   end
 
   root "static_pages#root"
