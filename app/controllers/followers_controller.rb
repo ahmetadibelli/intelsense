@@ -8,6 +8,15 @@ class FollowersController < ApplicationController
     @followeds = @user.followeds
   end
 
+  def create
+    @following = Following.new(follower_id: params[:follower_id], followed_id: params[:followed_id])
+    if @following.save
+      { success: true, message: 'User Followed Successfully' }
+    else
+      { success: false, message: 'Action Failed' }
+    end
+  end
+
   private
 
   def set_user
