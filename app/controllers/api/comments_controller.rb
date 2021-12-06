@@ -1,9 +1,10 @@
-class CommentsController < ApplicationController
+class Api::CommentsController < ApplicationController
   before_action :set_article, %i[index create]
   before_action :set_comment, %i[update destroy]
 
   def index
     @comments = @article.comments
+    render json: @comments
   end
 
   def create

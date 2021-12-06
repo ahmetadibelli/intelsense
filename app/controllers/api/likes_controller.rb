@@ -1,9 +1,10 @@
-class LikesController < ApplicationController
+class Api::LikesController < ApplicationController
   before_action :set_article, %i[index create]
   before_action :set_like, %i[destroy]
 
   def index
     @likes = @article.likes
+    render json: @likes
   end
 
   def create

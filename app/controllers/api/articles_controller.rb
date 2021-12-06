@@ -1,11 +1,13 @@
-class ArticlesController < ApplicationController
+class Api::ArticlesController < ApplicationController
   before_action :set_article, only: %i[show update destroy]
 
   def index
     @articles = Article.all
+    render json: @articles
   end
 
   def show
+    render json: @article
   end
 
   def create

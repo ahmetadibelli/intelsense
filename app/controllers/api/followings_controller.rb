@@ -1,12 +1,14 @@
-class FollowingsController < ApplicationController
+class Api::FollowingsController < ApplicationController
   before_action :set_user, only: %i[followers followings]
 
   def followers
     @followers = @user.followers
+    render json: @followers
   end
 
   def followeds
     @followeds = @user.followeds
+    render json: @followeds
   end
 
   def create
