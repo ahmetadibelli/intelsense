@@ -18,6 +18,7 @@ class ArticlesController < ApplicationController
   end
 
   def update
+    authorize @article
     if @article.update!(params[:article])
       { success: true, message: 'Article Updated Successfully' }
     else
@@ -26,6 +27,7 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
+    authorize @article
     if @article.destroy!
       { success: true, message: 'Article Destroyed Successfully' }
     else

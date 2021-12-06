@@ -15,6 +15,7 @@ class CommentsController < ApplicationController
   end
 
   def update
+    authorize @comment
     if @comment.update!(params[:comment])
       { success: true, message: 'Comment Updated Successfully' }
     else
@@ -23,6 +24,7 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    authorize @comment
     if @comment.destroy
       { success: true, message: 'Comment Destroyed Successfully' }
     else
