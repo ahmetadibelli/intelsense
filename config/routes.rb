@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     end
     get '/:user_id/followers', to: 'followings_controller#followers'
     get '/:user_id/followeds', to: 'followings_controller#followeds'
+    post '/follow', to: 'followings_controller#create'
+    delete '/unfollow', to: 'followings_controller#destroy'
   end
 
   root "static_pages#root"
