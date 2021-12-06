@@ -17,6 +17,15 @@ class FollowersController < ApplicationController
     end
   end
 
+  def destroy
+    @following = Following.find(params[:followed_id])
+    if @following.destroy
+      { success: true, message: 'User Unfollowed Successfully' }
+    else
+      { success: false, message: 'Action Failed' }
+    end
+  end
+
   private
 
   def set_user
