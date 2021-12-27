@@ -1,0 +1,112 @@
+
+*{
+
+	margin: 0;
+	padding: 0;
+	font-weight: 300;
+
+	box-sizing: border-box;
+}
+
+
+
+body{
+    /* background-image: url(slide03.jpg); */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: 100%;
+    background-repeat: no-repeat;
+
+}
+.main-div{
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    /* border: 2px solid rebeccapurple; */
+    place-items: center;
+
+    /* background-color: aqua; */
+    box-shadow: 2px 2px 1px 2px rgba(93, 116, 70, 0.507);
+}
+.user-form{
+    width: 30%;
+    background-color: darkcyan;
+    padding: 20px;
+    border-radius: 5px;
+    display: grid;
+    box-shadow: 2px 2px 3px 2px rgba(33, 2, 22, 0.2);
+
+}
+.user-form:hover{
+    background-color: darkolivegreen;
+}
+
+.user-form h1{
+    text-align: center;
+    margin: 20px 0;
+}
+label{
+    font-weight: bold;
+    font-size: 20px;
+}
+input{
+    border: none;
+    padding: 8px;
+    border-radius: 3px;
+}
+.btn{
+    background-color: steelblue;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    border-radius: 7px;
+    padding: 10px;
+
+}
+.btn:hover{
+    background-color: cornflowerblue;
+}
+.forgot-password{
+    /* float: right; */
+    color: white;
+}
+.forgot-password .pass{
+    color: white;
+    float: right;
+    list-style-type: none;
+    font-weight: bold;
+    outline: none;
+    text-decoration: none;
+
+}
+.forgot-password .pass:hover{
+color: cornflowerblue;
+}
+h3{
+    text-align: center;
+}
+.icons-list{
+
+    display: flex;
+    /* display: inline-flex; */
+    place-items: center;
+    margin-left: 30%;
+    margin-bottom: 25px;
+}
+.icons-list,li a{
+    list-style-type: none;
+
+}
+li a img{
+    margin: 6px;
+}
+h4 ,a{
+    text-decoration: none;
+    text-align: center;
+    margin-top: 7px;
+    color: white;
+}
+h4 ,a:hover{
+ color: blue;
+}
