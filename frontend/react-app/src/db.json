@@ -1,0 +1,32 @@
+{
+    "restuarant" : [
+        {
+            "id" : 1,
+            "name": "pizza hut",
+            "address": "lhr",
+            "rating" :"4.6",
+            "email" : "ahmad123@gmail.com"
+        },
+        {
+            "id" : 2,
+            "name": "McDonalds",
+            "address": "krchi",
+            "rating" :"5.4",
+            "email" : "ali123@gmail.com"
+        },
+        {
+            "id" : 3,
+            "name": "pbhola shop",
+            "address": "isl",
+            "rating" :"6.2",
+            "email" : "bholla123@gmail.com"
+        },
+        {
+            "id" : 4,
+            "name": "akaml",
+            "address": "multan",
+            "rating" :"3.8",
+            "email" : "akmal123@gmail.com"
+        }
+    ]
+}

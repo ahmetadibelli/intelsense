@@ -1,0 +1,66 @@
+.my-navbar{
+    background-color: silver;
+
+}
+.collapse{
+
+}
+/* .navbar-brand{
+    background-image: url('./refresh-btn.ico');
+    background-color: purple;
+} */
+ .nav-item{
+ padding: 10px;
+ /* background-color: aqua;   */
+}
+.navbar-brand img{
+    width: 35px;
+    height: 35px;
+    margin-left: 10px;
+}
+.nav-item .nav-link{ 
+    margin-right:  10px;
+    color: slategray;
+    /* background-color: blueviolet; */
+    /* font-weight: bold; */
+    
+}
+.nav-item .nav-link:hover{
+    
+    border-bottom: 2px solid red;
+    /* font-weight: bold; */
+      
+    color: red;
+
+}
+
+
+/* //media query included */
+
+@media only screen and (max-width: 768px) {
+    .my-navbar {
+      background-color: rosybrown;
+    }
+    .nav-item{
+        padding: 5px;
+        /* background-color: aqua;   */
+       }
+       .navbar-brand img{
+        width: 25px;
+        height: 25px;
+        margin-left: 10px;
+    }
+    .nav-item .nav-link{ 
+        margin-right:  5px;
+        color: slategray;
+        /* background-color: blueviolet; */
+        
+    }
+  }
+
+
+
+
+
+
+

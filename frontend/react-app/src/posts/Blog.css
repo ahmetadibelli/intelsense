@@ -1,0 +1,28 @@
+.main-div{
+
+
+}
+
+section{
+    background-color: burlywood;
+}
+ section .card img{
+    /* background-color: cyan; */
+    width: 90%;
+    height: 85%;
+}
+.card-body{
+    float: left;
+}
+.card-date{
+
+}
+.card-text{
+    font-size: 20px;
+    text-align: left;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.card-description{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: left;
+}

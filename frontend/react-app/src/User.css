@@ -1,0 +1,18 @@
+.my-div{
+    background-color: brown;
+    font-family: 'Roboto Slab', serif;
+}
+.main-div img{
+    width: 200px;
+    height: 200px;
+}
+.mainpage{
+    font-family: 'Courier New', Courier, monospace;
+    width: 90%;
+    height: 100vh;
+    margin: auto;
+}
+.mainpage h2{
+    text-align: center;
+    
+}
