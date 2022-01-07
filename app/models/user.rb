@@ -1,25 +1,85 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :bigint           not null, primary key
+#  fullname        :string           not null
+#  email           :string           not null
+#  password_digest :string           not null
+#  session_token   :string           not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
 class User < ApplicationRecord
-  has_many :articles
-  has_many :comments
-  has_many :likes
-
-  has_many :follower_followings, foreign_key: :followed_id, class_name: 'Following'
-  has_many :followers, through: :follower_followings
-
-  has_many :followed_followings, foreign_key: :follower_id, class_name: 'Following'
-  has_many :followeds, through: :followed_followings
-
-  validates :username, :email, :password_digest, :session_token, presence: true
-  validates :username, :email, :session_token, uniqueness: true
+  validates :fullname, presence: true
+  validates :email, presence: true, uniqueness: true
+  validates :password_digest, presence: true
+  validates :session_token, presence: true, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
-  attr_reader :password
 
   after_initialize :ensure_session_token
 
-  def self.find_by_credentials(username, password)
-    user = User.find_by(username: username)
-    return nil unless user
+  attr_reader :password
+
+  has_many :stories,
+    primary_key: :id,
+    foreign_key: :author_id,
+    class_name: 'Story',
+    dependent: :destroy
+
+  has_many :responses,
+    primary_key: :id,
+    foreign_key: :author_id,
+    class_name: 'Response',
+    dependent: :destroy
+
+  has_many :follows, # Instances of the current_user following other User
+    primary_key: :id,
+    foreign_key: :follower_id,
+    class_name: 'Follow',
+    dependent: :destroy
+
+  has_many :subscriptions, # The Users that current_user follows
+    through: :follows,
+    source: :followee,
+    dependent: :destroy
+
+  has_many :followings, # Instances of the current_user being followed
+    primary_key: :id,
+    foreign_key: :followee_id,
+    class_name: 'Follow',
+    dependent: :destroy
+
+  has_many :subscribers, # The Users the follow current_user
+    through: :followings,
+    source: :follower,
+    dependent: :destroy
+
+  has_many :claps,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: 'Clap',
+    dependent: :destroy
+
+  def self.generate_session_token
+    SecureRandom::urlsafe_base64
+  end
+
+  def self.find_by_credentials(email, password)
+    user = User.find_by(email: email)
+    return nil if user.nil?
     user.is_password?(password) ? user : nil
+  end
+
+  def reset_session_token!
+    self.session_token = User.generate_session_token
+    self.save!
+    self.session_token
+  end
+
+  def ensure_session_token
+    self.session_token ||= User.generate_session_token
   end
 
   def password=(password)
@@ -30,17 +90,4 @@ class User < ApplicationRecord
   def is_password?(password)
     BCrypt::Password.new(self.password_digest).is_password?(password)
   end
-
-  def reset_session_token!
-    self.session_token = SecureRandom.urlsafe_base64
-    self.save!
-    self.session_token
-  end
-
-  private
-
-  def ensure_session_token
-    self.session_token ||= SecureRandom.urlsafe_base64
-  end
-
 end

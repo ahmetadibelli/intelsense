@@ -1,16 +1,11 @@
 class ApplicationController < ActionController::Base
-  include Pundit
+  protect_from_forgery with: :exception 
+  # OR protect_from_forgery with: :null_session
+  #  ^^^ Will throw an InvalidAuthenticityToken exception
 
-    protect_from_forgery with: :exception
-
-    helper_method :current_user, :logged_in?
-
-  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
-
-  private
+  helper_method :current_user, :logged_in?
 
   def current_user
-    return nil unless session[:session_token]
     @current_user ||= User.find_by(session_token: session[:session_token])
   end
 
@@ -18,7 +13,7 @@ class ApplicationController < ActionController::Base
     !!current_user
   end
 
-  def login(user)
+  def login!(user)
     user.reset_session_token!
     session[:session_token] = user.session_token
     @current_user = user
@@ -26,13 +21,14 @@ class ApplicationController < ActionController::Base
 
   def logout
     current_user.reset_session_token!
-    session[:session_token] = nil
     @current_user = nil
+    session[:session_token] = nil
+    true
   end
 
   def require_logged_in
-    unless current_user
-      render json: { base: ['Please login to continue'] }, status: 401
+    if !current_user
+      render json: { base: ['Must be logged in'] }, status: 401
     end
   end
 end

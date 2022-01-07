@@ -1,121 +1,111 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class SessionForm extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            username: '',
-            email: '',
-            password: '',
-        };
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.demoLogin= this.demoLogin.bind(this);
-        
+  constructor(props) {
+    super(props);
+    this.state = { fullname: "", email: "", password: "" };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleClose = this.handleClose.bind(this);
+  }
+
+  update(field) {
+    return e => {
+      this.setState({ [field]: e.target.value })
+    };
+  };
+
+  handleClose(e) {
+    e.preventDefault();
+    this.props.closeModal();
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const user = Object.assign({}, this.state);
+    this.props.processForm(user).then(this.props.closeModal);
+  }
+
+  renderErrors() {
+    let errors = this.props.errors.map((error, idx) => {
+      return <li key={`error-${idx}`}>{error}</li>
+    });
+
+    if (this.props.formType !== "Sign up") {
+      return (
+        <ul className="ul-errors">
+          {errors}
+        </ul>
+      );
+    };
+  }
+
+  render() {
+    let fullnameInput;
+    if (this.props.formType === "Sign up") {
+      fullnameInput = this.props.errors.includes("Fullname can't be blank") ?
+        <>
+          <label className="login-label-error">{this.props.errors[this.props.errors.indexOf("Fullname can't be blank")]}</label>
+          <input type="text" value={this.state.fullname} onChange={this.update('fullname')} className="login-input-error" />
+        </>
+        :
+        <>
+          <label className="login-label">Full Name</label>
+          <input type="text" value={this.state.fullname} onChange={this.update('fullname')} className="login-input" />
+        </>
+    } else {
+      fullnameInput = ""
     }
 
-    update(field) {
-        return e => this.setState({
-            [field]: e.currentTarget.value
-        });
-    }
+    const emailInput = this.props.errors.includes("Email can't be blank") && this.props.formType === "Sign up" ?
+      <>
+        <label className="login-label-error">{this.props.errors[this.props.errors.indexOf("Email can't be blank")]}</label>
+        <input type="text" value={this.state.email} onChange={this.update('email')} className="login-input-error" />
+      </>
+      :
+      <>
+        <label className="login-label">Email</label>
+        <input type="text" value={this.state.email} onChange={this.update('email')} className="login-input" />
+      </>
 
-    demoLogin() {
-        return (e) => {
-            e.preventDefault();
-            // const demo = {user: {username: 'demouser', email: "demouser@gmail.com", password: "noneed"}};
-            if (this.props.formType === 'Log In') 
-                {this.props.processForm(demo) 
-                    .then(this.props.closeModal)
-                }
+    const passwordInput = this.props.errors.includes("Password is too short (minimum is 6 characters)") ?
+      <>
+        <label className="login-label-error">{this.props.errors[this.props.errors.indexOf("Password is too short (minimum is 6 characters)")]}</label>
+        <input type="password" value={this.state.password} onChange={this.update('password')} className="login-input-error" />
+      </>
+      :
+      <>
+        <label className="login-label">Password</label>
+        <input type="password" value={this.state.password} onChange={this.update('password')} className="login-input" />
+      </>
 
-            } 
-    }
-    
+    return (
+      <div className="login-form-container">
+        <form onSubmit={this.handleSubmit} className="login-form-box">
+          <a className='modal-button-close' onClick={this.handleClose}>{String.fromCharCode(10005)}</a>
 
+          <h1 className="form-heading">{this.props.formHeading}</h1>
 
-    handleSubmit(e) {
-        e.preventDefault();
-        const user = Object.assign({}, this.state);
-        this.props.processForm(user)
-        .then(this.props.closeModal);
-    }
+          <p className="form-description">{this.props.formDescription}</p>
 
-    renderErrors() {
-        const errors = this.props.errors.map((error, idx) => (
-            <li key={`error-${idx}`}>
-                {error}
-            </li>
-        ));
-        return (
-            <div>
-                <ul className="session-errors">
-                    {errors}
-                </ul>
-            </div>
-        )
-    }
+          {this.renderErrors()}
 
-    render() {
-        let usernameField;
-        if (this.props.formType === 'Sign Up') {
-            usernameField = (
-                <div>
-                    <label className="session-form-lbl">Username
-                        <input type="text"
-                                value={this.state.username}
-                                onChange={this.update('username')}
-                        />
-                    </label>
-                </div>
-            )
-        } else {
-            usernameField = <div></div>
-        }
-        //  debugger
-        return (
-            <div className="session-form-container">
-                <button className="session-close" onClick={this.props.closeModal}>x</button>   
-                    {this.props.header}
-                    {this.renderErrors()}
-                    {this.props.description}
-                    <form className="session-form" onSubmit={this.handleSubmit}>
-                        {
-                            this.props.formType === 'Sign Up' && 
-                                    <label className="session-form-lbl">Email
-                                            <input type="text"
-                                                    value={this.state.email}
-                                                    onChange={this.update('email')}
-                                            
-                                            />
-                                    </label>
-                        }
+          <div className="login-form">
+            {fullnameInput}
+            {emailInput}
+            {passwordInput}
+            <div id="modal-submit"><input className="sessions-submit" type="submit" value={this.props.formType} /></div>
+          </div>
 
-                                    <label className="session-form-lbl">Username
-                                                            <input type="text"
-                                            value={this.state.username}
-                                            onChange={this.update('username')}
-
-                                        />
-                                    </label>
-
-                                    <label className="session-form-lbl">Password
-                                        <input type="password"
-                                                value={this.state.password}
-                                                onChange={this.update('password')}
-                                        />
-                                    </label>
-
-                                    <input className="session-submit" type="submit" value={this.props.formType} />
-                                
-                    </form>
-                    {/* <button className="demo-button" onClick={this.demoLogin}>Demo Login</button> */}
-                    <footer className="session-footer">
-                        {this.props.footer}
-                        {this.props.otherForm}
-                    </footer>
-            </div>
-        );
-    }
+          <footer className="small-footer">
+            <small className="small-footer-words">{this.props.formFooter}</small>
+            &nbsp;
+            <small>{this.props.otherForm}</small>
+          </footer>
+        </form>
+      </div>
+    );
+  }
 }
 
-export default SessionForm;
+export default withRouter(SessionForm);
