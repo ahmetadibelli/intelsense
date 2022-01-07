@@ -81,8 +81,8 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-#production:
-#  <<: *default
-#  database: Intelsense_production
-#  username: Intelsense
-#  password: <%#= ENV['Intelsense_DATABASE_PASSWORD'] %>
+production:
+  <<: *default
+  database: Intelsense_production
+  username: Intelsense
+  password: <%#= ENV['Intelsense_DATABASE_PASSWORD'] %>
