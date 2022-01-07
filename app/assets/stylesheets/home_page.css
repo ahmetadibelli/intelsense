@@ -1,0 +1,199 @@
+.header-logo {
+  font-family: 'Playfair Display', serif; 
+  color: rgba(0,0,0,.84)!important;
+  fill: rgba(0,0,0,.84)!important;
+  font-size: 1.9em;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.icons {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.fa-linkedin {
+  font-size: 1.9em;
+  padding-right: 16px;
+}
+
+.fa-github-square {
+  font-size: 1.9em;
+  padding-right: 16px;
+}
+
+.bryan-santos {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 1032px;
+  height: 65px;
+  padding: 0 20px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.header-logo {
+  width: fit-content;
+}
+
+.nav-login {
+  height: 37px;
+  padding: 0 16px;
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: 4px;
+  border-color: #03a87c;
+  color: #03a87c;
+  fill: #03a87c;
+  text-align: center;
+  vertical-align: baseline;
+  white-space: normal;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0;
+  font-size: 13px;
+  line-height: 20px;
+  text-align: center;
+  background: white;
+}
+
+.nav-signup {
+  height: 37px;
+  padding: 0 16px;
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: 4px;
+  border-color: #03a87c;
+  color: #03a87c;
+  fill:  #03a87c ;
+  text-align: center;
+  vertical-align: baseline;
+  white-space: normal;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0;
+  font-size: 13px;
+  line-height: 20px;
+  text-align: center;
+  background: white;
+}
+
+.nav-logout {
+  height: 37px;
+  padding: 0 16px;
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: 4px;
+  border-color: #cc5454 ;
+  color:  #cc5454 ;
+  fill:  #cc5454 ;
+  text-align: center;
+  vertical-align: baseline;
+  white-space: normal;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0;
+  font-size: 13px;
+  line-height: 20px;
+  text-align: center;
+  background: white;
+}
+
+.nav-user {
+  font-family: 'Roboto', sans-serif;
+  margin-right: 16px;
+  font-weight: 400;
+}
+
+.nav-user:hover {
+  text-decoration: underline;
+}
+
+.nav-2 {
+  display: flex;
+  align-items: center
+}
+
+.nav-login:hover {
+  border-color: #018d68;
+  color: #018d68;
+  fill:  #018d68;
+  cursor: pointer;
+  background-color: rgba(0,155,100,.3);
+  transition-property: all;
+  transition-duration: .3s;
+}
+
+.nav-signup:hover {
+  border-color: #018d68;
+  color: #018d68;
+  fill:  #018d68;
+  cursor: pointer;
+  background-color: rgba(0,155,100,.3);
+  transition-property: all;
+  transition-duration: .3s;
+}
+
+.nav-logout:hover {
+  border-color: #973434;
+  color: #973434;
+  fill:  #973434 ;
+  cursor: pointer;
+  background-color: rgba(228, 0, 0, 0.3);
+  transition-property: all;
+  transition-duration: .3s;
+}
+
+.greeting-profile-pic {
+  margin-right: 16px;
+  border-radius: 50%;
+  border-top: 2px solid #03a87c;
+  border-bottom: 2px solid #03a87c;
+}
+
+.greeting-profile-pic:hover {
+  border-top:  2px solid #0d8867;
+  border-bottom:  2px solid #0d8867;
+}
+
+.nav-demo {
+  height: 37px;
+  padding: 0 16px;
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: 4px;
+  border-color: #03a87c;
+  color: #03a87c;
+  fill: #03a87c;
+  text-align: center;
+  vertical-align: baseline;
+  white-space: normal;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0;
+  font-size: 13px;
+  line-height: 20px;
+  text-align: center;
+  background: white;
+}
+
+.nav-demo:hover {
+  border-color: #018d68;
+  color: #018d68;
+  background-color: rgba(0,155,100,.3);
+  transition-property: all;
+  transition-duration: .3s;
+}
